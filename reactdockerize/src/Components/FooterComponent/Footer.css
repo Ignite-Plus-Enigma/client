@@ -1,0 +1,13 @@
+:root {
+    --Footer-color: crimson;
+    --Footer__Sections__Link--hover-color: crimson;
+    --Footer__Sections__Header-fontSize: 1.5rem;
+    --Footer__Sections__Link-fontSize: 0.8rem;
+    --Footer__Copyright-fontSize: 0.8rem;
+    --Footer-backgroundImage: crimson;
+  }
+
+  .body{
+    background-color: crimson;
+    color: crimson;
+  }

@@ -9,6 +9,8 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import GoogleLogin from "react-google-login";
+
+import { GoogleLogout } from 'react-google-login';
 import './Navbar.css'
 function Navbar() {
     
@@ -21,6 +23,13 @@ function Navbar() {
             }
             else if(state == "Sign Out"){
                 setState("Sign In")
+                //return 
+                // <GoogleLogout
+                // clientId="992798065124-l39cdadgtpb6l4ikt8nf4m909vspjnr0.apps.googleusercontent.com"
+                // buttonText="Logout"
+                //  onLogoutSuccess={logout}
+                //       >
+                //     </GoogleLogout>
             }
           
         };
@@ -91,3 +100,4 @@ function Navbar() {
     }
 
 export default Navbar;
+

@@ -2,6 +2,7 @@ import React from 'react'
 import {Component} from 'react';
 import Navbar from "../NavbarComponent/Navbar"
 import axios from "axios"
+import Row from "../HomePage/Row"
 
 
 export default class AudioFile extends Component{
@@ -211,6 +212,7 @@ export default class AudioFile extends Component{
                 </div>
                 <h6 className="book-recommendation-heading">YOU MAY ALSO LIKE:</h6>
                 <div className="recommendation-div">
+                <Row name ={this.state.genre} forapicall={this.state.genre}/>
 
                 </div>
             </div>

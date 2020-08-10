@@ -38,7 +38,8 @@ const [activeBook, setActiveBook] = useState();
                      
               })
             }
-    else if(props.forapicall === "children"){
+    else if(props.forapicall === "children" || props.forapicall == "Children"){
+      console.log("entered children")
               const apiendpoint = "http://localhost:8050/api/v1/books/category/Children"
               axios.get(apiendpoint)
                       .then(response =>response.data)
@@ -47,7 +48,7 @@ const [activeBook, setActiveBook] = useState();
                              
                       })
                     }
-                    else if(props.forapicall === "mostviewed"){
+     else if(props.forapicall === "mostviewed"){
               const apiendpoint = "http://localhost:8050/api/v1/books/mostviewed"
               axios.get(apiendpoint)
                       .then(response =>response.data)

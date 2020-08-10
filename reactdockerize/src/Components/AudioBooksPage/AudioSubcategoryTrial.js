@@ -12,10 +12,9 @@ import Rating from '@material-ui/lab/Rating';
 import IconButton from '@material-ui/core/IconButton';
 import { useHistory } from "react-router-dom";
 import { withRouter } from 'react-router';
-import Tabs from '../PDFBooksPage/Tabs'
+import AudioTabs from './AudioTabs'
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Link from "@material-ui/core/Link";
-// import history from "history"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -54,31 +53,24 @@ export default function AudioSubcategoryTrial(props){
     const classes = useStyles();
     const [books,setBooks] = useState([])
     const history = useHistory();
-    const [mainCategoryProps, setMainCategoryProps] = useState("Textbooks")
+    const [mainCategoryProps, setMainCategoryProps] = useState()
     function handleAudio(book){
-      console.log(book.book.id)
-      // eslint-disable-next-line no-restricted-globals
       history.push(`/Audio/${book.book.id}/`)
     }
     function handlePdf(book){
-      console.log(book.book.id)
-      // eslint-disable-next-line no-restricted-globals
       history.push(`/PDF/${book.book.id}/`)
     }
 
     const fetchData = () => {
-        console.log(props.location.pathname)
-        console.log(props)
         const v= props.location.pathname.split("/")[2]
+        console.log("HERE IS THE MAIN CATEGORY NAME")
+        // console.log(v)
         setMainCategoryProps(v)
-        console.log(v)
         const uniqueId = props.location.pathname.split("/")[3]
-        console.log(uniqueId)
         const mainCategoriesApiEndPoint = 'http://localhost:8050/api/v1/books/subcategory/'+uniqueId
         axios.get(mainCategoriesApiEndPoint)
         .then(response => response.data)
         .then((data) => {
-            console.log(data);
             setBooks(data)
         })
     }
@@ -97,15 +89,13 @@ export default function AudioSubcategoryTrial(props){
       >
         AudioBooks
       </Link>
-      <Typography color="textPrimary">Textbooks</Typography>
+      <Typography color="textPrimary">{mainCategoryProps}</Typography>
     </Breadcrumbs>
         <h1>{mainCategoryProps}</h1>
-       {console.log(mainCategoryProps) }
-       {console.log("MainCatProps")}
-        <Tabs mainCat={mainCategoryProps}/>
+        <AudioTabs mainCat={mainCategoryProps}/>
         <hr id="tabDivider"></hr>
         <div className={classes.root}>
-    {console.log(books)}
+   
        
     <ul classname="subcategorylist">
         {books.map((book)=>(
@@ -140,8 +130,6 @@ export default function AudioSubcategoryTrial(props){
 
             <Grid item xs={4}>
                 <div>
-                    {/* <PictureAsPdfIcon fontSize="large"></PictureAsPdfIcon>
-                    <Typography variant="subtitle2">Read</Typography> */}
                     {book.format.pdf != null ? <IconButton  aria-label="read pdf book"   onClick={() => handlePdf({book})}>
           <PictureAsPdfIcon fontSize="large"/>
         </IconButton> : null }

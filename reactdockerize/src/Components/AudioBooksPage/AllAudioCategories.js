@@ -30,7 +30,7 @@ const mainCategory = [{name:'Arts',
                   name:'Children',
                   subCategory:['Kids','Stories in Rhyme','Baby','Bedtime','Picture']
                 },
-                {name:'Text Books',
+                {name:'Textbooks',
                 subCategory:['History','Math','Geography','Psychology','Algebra','Education','Business','Science','English','Chemistry','Physics','Computer Science']},
             {name:'Biography',
           subCategory:['Autobiographies','History','Politics','World war','Women','Kings & rulrs','Composers','artists']},

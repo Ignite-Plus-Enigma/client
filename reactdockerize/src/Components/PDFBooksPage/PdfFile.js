@@ -1,6 +1,7 @@
 import React from 'react'
 import {Component} from 'react';
 import axios from "axios"
+import ReactDOM from 'react-dom';
 
 
 export default class PdfFile extends Component{
@@ -45,16 +46,37 @@ export default class PdfFile extends Component{
                     });  
                     console.log(data)     
             })
+           
+                
+    }
+
+    componentWillUnmount(){
+        var name = document.getElementsByClassName("pdf-book-view")
+        console.log("check for name here")
+        console.log(name.contentWindow)
+                var currentPageNum
+                // if ( name.contentDocument ) {
+                //     currentPageNum= name.contentDocument.getElementById('pageNumber').value;
+                //     console.log("inside")
+                // }
+
+                console.log("the page number is")
+                var doc = this.getDOMNode().contentDocument;
+                console.log(doc);
+                console.log("up")
+
+                // var name = React.findDOMNode(this.refs.cpDev1).value;
+              
     }
 
     render(){
         return (
             <div>
-        
+                
                 <h2 className = "book-name">{this.state.bookName}</h2>
                 <h3 className = "author-name">{this.state.author}</h3>
                 <h6 className = "audio-book-genre">{this.state.genre}</h6>
-                <iframe src={this.state.bookUri} class="pdf-book-view"></iframe>
+                <iframe  src={this.state.bookUri} class="pdf-book-view"  value = "hi" ref = "iframe"></iframe>
                 <div>
                     <h5 className="book-recommendation-heading">Description</h5>
                     <p className = "audio-description">

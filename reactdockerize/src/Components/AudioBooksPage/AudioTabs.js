@@ -39,8 +39,8 @@ export default function Tabs(props) {
 
 
   function handleClick(singleSub){
-    history.push(`/AudioSubCategory/Text%20Books/${singleSub.singleSub}/`)
-    window.location.reload(true);
+      history.push(`/AudioSubCategory/Text%20Books/${singleSub.singleSub}/`)
+      window.location.reload(true);
       console.log(singleSub)
       console.log("inside handleclick")
   }

@@ -51,21 +51,29 @@ export default class PdfFile extends Component{
     }
 
     componentWillUnmount(){
-        var name = document.getElementsByClassName("pdf-book-view")
-        console.log("check for name here")
-        console.log(name.contentWindow)
+        // var name = document.getElementsByClassName("pdf-book-view")
+        // console.log("check for name here")
+        // console.log(name.contentWindow)
                 var currentPageNum
                 // if ( name.contentDocument ) {
                 //     currentPageNum= name.contentDocument.getElementById('pageNumber').value;
                 //     console.log("inside")
                 // }
 
-                console.log("the page number is")
-                var doc = this.getDOMNode().contentDocument;
-                console.log(doc);
-                console.log("up")
+                // console.log("the page number is")
+                // var doc = this.getDOMNode().contentDocument;
+                // console.log(doc);
+                // console.log("up")
 
                 // var name = React.findDOMNode(this.refs.cpDev1).value;
+                // PdfFile.getDocument('helloworld.pdf').then(function(pdf) {
+                //     // you can now use *pdf* here
+                
+                //     pdf.getPage(1).then(function(page) {
+                //             // you can now use *page* here
+                //         });
+                        alert("out")
+                // }); 
               
     }
 
@@ -76,7 +84,7 @@ export default class PdfFile extends Component{
                 <h2 className = "book-name">{this.state.bookName}</h2>
                 <h3 className = "author-name">{this.state.author}</h3>
                 <h6 className = "audio-book-genre">{this.state.genre}</h6>
-                <iframe  src={this.state.bookUri} class="pdf-book-view"  value = "hi" ref = "iframe"></iframe>
+                <iframe  id = "iframe" src={this.state.bookUri} class="pdf-book-view"  value = "hi" ref = "iframe"></iframe>
                 <div>
                     <h5 className="book-recommendation-heading">Description</h5>
                     <p className = "audio-description">

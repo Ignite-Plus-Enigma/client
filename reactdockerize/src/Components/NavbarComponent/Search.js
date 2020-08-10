@@ -32,7 +32,7 @@ export default function CustomizedInputBase() {
   }
 
   function handleSubmit(event){
-    // event.preventDefault();
+    event.preventDefault();
     console.log("The kye searched for is")
     console.log(key)
   }
